@@ -66,8 +66,8 @@ namespace WaterSort
             {
                 var label = (Label)e.Data.GetData("System.Windows.Forms.Label");
                 label.Visible = true;
-                GroupBox groupBox = sender as GroupBox;
-                groupBox.Controls.Add(label);
+                GroupBox flask = sender as GroupBox;
+                flask.Controls.Add(label);
 
             }
         }
