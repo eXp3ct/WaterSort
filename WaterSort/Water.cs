@@ -6,8 +6,9 @@ namespace WaterSort
     public class Water
     {
         public Label Drop;
-        
+
         private Color _color;
+        
 
         public Water(Color color)
         { 

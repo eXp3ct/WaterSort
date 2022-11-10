@@ -31,9 +31,10 @@ namespace WaterSort
 
             FillDrops(_allDrops, DropsBlueCount + DropsGreenCount, _flasks);
 
-            Drag();
+            AddDragLogic();
+            
         }
-        private void Drag()
+        private void AddDragLogic()
         {
             foreach (var drop in _allDrops)
                 drop.Drop.MouseDown += new MouseEventHandler(label_MouseDown);
@@ -45,27 +46,96 @@ namespace WaterSort
                 flask.DragDrop += new DragEventHandler(label_DragDrop);
             }
                 
-
-            /*label1.MouseDown += new MouseEventHandler(label_MouseDown);
-            _flasks[0].AllowDrop = true;
-            _flasks[0].DragEnter += new DragEventHandler(label_DragEnter);
-            _flasks[0].DragDrop += new DragEventHandler(label_DragDrop);*/
         }
         private void label_MouseDown(object sender, MouseEventArgs e)
         {
-            Label label= sender as Label;
-            label.DoDragDrop(sender, DragDropEffects.Move);
+            //CountLabelsInFlask();
+
+            Label label = sender as Label;
+            //label.DoDragDrop(sender, DragDropEffects.Move);
+            GroupBox flask;
+            if (label.Parent.Name == nameof(Flask1) || label.Parent.Name == nameof(Flask2) ||
+                label.Parent.Name == nameof(Flask3) || label.Parent.Name == nameof(Flask4))
+            {
+                flask = (GroupBox)label.Parent;
+
+                List<Water> dropInFlask = new List<Water>(4);
+
+                foreach (var drop in _allDrops)
+                {
+                    if (flask.Controls.Contains(drop.Drop))
+                    {
+                        dropInFlask.Add(drop);
+                    }
+                }
+
+                for (int i = 0; i < dropInFlask.Count - 1; i++)
+                {
+                    if (dropInFlask[i].Drop.BackColor == dropInFlask[i + 1].Drop.BackColor)
+                    {
+                        dropInFlask[i].Drop.DoDragDrop(dropInFlask[i].Drop, DragDropEffects.Move);
+                        dropInFlask[i + 1].Drop.DoDragDrop(dropInFlask[i + 1].Drop, DragDropEffects.Move);
+
+                        //MessageBox.Show("Drag Two");
+                    }
+                    else
+                    {
+                        break;
+                        
+                        //MessageBox.Show("Drag One");
+                    }
+                }
+                label.DoDragDrop(label, DragDropEffects.Move);
+            }
+
+            
+            /*_allDrops[0].Drop.DoDragDrop(_allDrops[0].Drop, DragDropEffects.Move);
+            _allDrops[1].Drop.DoDragDrop(_allDrops[1].Drop, DragDropEffects.Move);*/
+
+
+
         }
+        private void CountLabelsInFlask()
+        {
+            foreach (var flask in _flasks)
+            {
+                List<Water> dropInFlask = new List<Water>(4);
+
+                foreach (var drop in _allDrops)
+                {
+                    if (flask.Controls.Contains(drop.Drop))
+                    {
+                        dropInFlask.Add(drop);
+                    }
+                }
+                
+                for(int i = 0; i < dropInFlask.Count-1; i++)
+                {
+                    if (dropInFlask[i].Drop.BackColor == dropInFlask[i + 1].Drop.BackColor)
+                    {
+                        dropInFlask[i].Drop.DoDragDrop(dropInFlask[i].Drop, DragDropEffects.Move);
+                        dropInFlask[i+1].Drop.DoDragDrop(dropInFlask[i+1].Drop, DragDropEffects.Move);
+                    }
+                    else
+                    {
+                        dropInFlask[i].Drop.DoDragDrop(dropInFlask[i].Drop, DragDropEffects.Move);
+                    }
+                }
+
+                //MessageBox.Show(string.Format("{0} | {1} | {2} | {3}", indices[0], indices[1], indices[2], indices[3]));
+            }
+        }
+
         private void label_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
         }
         private void label_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent("System.Windows.Forms.Label", true))
+
+            if (e.Data.GetDataPresent("System.Windows.Forms.Label", false))
             {
                 var label = (Label)e.Data.GetData("System.Windows.Forms.Label");
-                label.Visible = true;
                 GroupBox flask = sender as GroupBox;
                 flask.Controls.Add(label);
 
@@ -118,7 +188,14 @@ namespace WaterSort
         {
             GroupBox groupBox = sender as GroupBox;
             MessageBox.Show(groupBox.Controls.Count.ToString());
-            //Do();
+
+            
+
+            //MessageBox.Show(groupBox.Controls.GetChildIndex(_dropsBlue[0].Drop).ToString() +
+            //groupBox.Controls.GetChildIndex(_dropsBlue[1].Drop).ToString());
+
+
+
         }
     }
 }
