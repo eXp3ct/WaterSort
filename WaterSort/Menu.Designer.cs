@@ -60,6 +60,7 @@ namespace WaterSort
             this.SecondLevel.TabIndex = 2;
             this.SecondLevel.Text = "Level 2";
             this.SecondLevel.UseVisualStyleBackColor = true;
+            this.SecondLevel.Click += new System.EventHandler(this.SecondLevel_Click);
             // 
             // ThirsLevel
             // 
@@ -72,6 +73,7 @@ namespace WaterSort
             this.ThirsLevel.TabIndex = 3;
             this.ThirsLevel.Text = "Level 3";
             this.ThirsLevel.UseVisualStyleBackColor = true;
+            this.ThirsLevel.Click += new System.EventHandler(this.ThirsLevel_Click);
             // 
             // MenuText
             // 
@@ -98,6 +100,8 @@ namespace WaterSort
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "Water Sort";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 

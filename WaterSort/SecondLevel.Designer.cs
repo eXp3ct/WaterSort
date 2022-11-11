@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 namespace WaterSort
 {
-    partial class FirstLevel
+    partial class SecondLevel
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace WaterSort
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstLevel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecondLevel));
             this.Flask1 = new System.Windows.Forms.GroupBox();
             this.Flask2 = new System.Windows.Forms.GroupBox();
             this.Flask3 = new System.Windows.Forms.GroupBox();
@@ -37,13 +37,15 @@ namespace WaterSort
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.StripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.Flask5 = new System.Windows.Forms.GroupBox();
+            this.Flask6 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Flask1
             // 
             this.Flask1.BackColor = System.Drawing.SystemColors.Control;
-            this.Flask1.Location = new System.Drawing.Point(85, 165);
+            this.Flask1.Location = new System.Drawing.Point(12, 165);
             this.Flask1.Name = "Flask1";
             this.Flask1.Size = new System.Drawing.Size(95, 273);
             this.Flask1.TabIndex = 0;
@@ -52,7 +54,7 @@ namespace WaterSort
             // Flask2
             // 
             this.Flask2.BackColor = System.Drawing.SystemColors.Control;
-            this.Flask2.Location = new System.Drawing.Point(240, 165);
+            this.Flask2.Location = new System.Drawing.Point(141, 165);
             this.Flask2.Name = "Flask2";
             this.Flask2.Size = new System.Drawing.Size(95, 273);
             this.Flask2.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace WaterSort
             // Flask3
             // 
             this.Flask3.BackColor = System.Drawing.SystemColors.Control;
-            this.Flask3.Location = new System.Drawing.Point(412, 165);
+            this.Flask3.Location = new System.Drawing.Point(279, 165);
             this.Flask3.Name = "Flask3";
             this.Flask3.Size = new System.Drawing.Size(95, 273);
             this.Flask3.TabIndex = 1;
@@ -70,7 +72,7 @@ namespace WaterSort
             // Flask4
             // 
             this.Flask4.BackColor = System.Drawing.SystemColors.Control;
-            this.Flask4.Location = new System.Drawing.Point(583, 165);
+            this.Flask4.Location = new System.Drawing.Point(414, 165);
             this.Flask4.Name = "Flask4";
             this.Flask4.Size = new System.Drawing.Size(95, 273);
             this.Flask4.TabIndex = 1;
@@ -102,12 +104,32 @@ namespace WaterSort
             this.ExitButton.Text = "Exit";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // FirstLevel
+            // Flask5
+            // 
+            this.Flask5.BackColor = System.Drawing.SystemColors.Control;
+            this.Flask5.Location = new System.Drawing.Point(553, 165);
+            this.Flask5.Name = "Flask5";
+            this.Flask5.Size = new System.Drawing.Size(95, 273);
+            this.Flask5.TabIndex = 2;
+            this.Flask5.TabStop = false;
+            // 
+            // Flask6
+            // 
+            this.Flask6.BackColor = System.Drawing.SystemColors.Control;
+            this.Flask6.Location = new System.Drawing.Point(693, 165);
+            this.Flask6.Name = "Flask6";
+            this.Flask6.Size = new System.Drawing.Size(95, 273);
+            this.Flask6.TabIndex = 2;
+            this.Flask6.TabStop = false;
+            // 
+            // SecondLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Flask6);
+            this.Controls.Add(this.Flask5);
             this.Controls.Add(this.Flask4);
             this.Controls.Add(this.Flask3);
             this.Controls.Add(this.Flask2);
@@ -115,8 +137,8 @@ namespace WaterSort
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FirstLevel";
-            this.Text = "FristLevel";
+            this.Name = "SecondLevel";
+            this.Text = "SecondLevel";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.MaximizeBox = false;
@@ -140,5 +162,7 @@ namespace WaterSort
         private ToolStripMenuItem StripMenu;
         private ToolStripMenuItem ExitButton;
         public MenuStrip menuStrip1;
+        private GroupBox Flask5;
+        private GroupBox Flask6;
     }
 }

@@ -16,5 +16,19 @@ namespace WaterSort
             firstLevel.Show(this);
             Hide();
         }
+
+        private void SecondLevel_Click(object sender, EventArgs e)
+        {
+            SecondLevel secondLevel = new SecondLevel();
+            secondLevel.Show(this);
+            Hide();
+        }
+
+        private void ThirsLevel_Click(object sender, EventArgs e)
+        {
+            ThirdLevel thirdLevel = new ThirdLevel();
+            thirdLevel.Show(this);
+            Hide();
+        }
     }
 }

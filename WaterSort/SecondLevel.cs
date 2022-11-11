@@ -10,37 +10,42 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WaterSort
 {
-    public partial class FirstLevel : Form, ILevel
+    public partial class SecondLevel : Form, ILevel
     {
-        private const int DropsColors = 2;
+        private const int DropsColors = 3;
         private const int DropsBlueCount = 4;
         private const int DropsGreenCount = 4;
-        private const int FlasksCount = 4;
+        private const int DropsYellowCount = 4;
+        private const int FlasksCount = 6;
 
         private List<Water> _dropsBlue = new List<Water>(DropsBlueCount);
         private List<Water> _dropsGreen = new List<Water>(DropsGreenCount);
-        private List<Water> _allDrops = new List<Water>(DropsGreenCount + DropsBlueCount);
+        private List<Water> _dropsYellow = new List<Water>(DropsGreenCount);
+        private List<Water> _allDrops = new List<Water>(DropsGreenCount + DropsBlueCount + DropsYellowCount);
         private List<Water>[] _allDropsArray = new List<Water>[DropsColors];
 
         private GroupBox[] _flasks;
 
         private bool _flaskFilledWithBlueDrops;
         private bool _flaskFilledWithGreenDrops;
+        private bool _flaskFilledWithYellowDrops;
         private Stopwatch _stopwatch = new Stopwatch();
 
-        public FirstLevel()
+        public SecondLevel()
         {
             InitializeComponent();
 
             _stopwatch.Start();
 
-            _flasks = new GroupBox[] { Flask1, Flask2, Flask3, Flask4, };
+            _flasks = new GroupBox[FlasksCount] { Flask1, Flask2, Flask3, Flask4, Flask5, Flask6};
 
             InitializeDrops(_dropsBlue, Color.Blue);
             InitializeDrops(_dropsGreen, Color.Green);
+            InitializeDrops(_dropsYellow, Color.Yellow);
 
             _allDropsArray[0] = _dropsBlue;
             _allDropsArray[1] = _dropsGreen;
+            _allDropsArray[2] = _dropsYellow;
 
             _allDrops = AllDrops(_allDropsArray);
 
@@ -66,7 +71,7 @@ namespace WaterSort
         {
             List<Water> result = new List<Water>();
 
-            foreach(var drop in drops)
+            foreach (var drop in drops)
                 result.AddRange(drop);
 
             return result;
@@ -74,7 +79,7 @@ namespace WaterSort
 
         public void CheckWin()
         {
-            if (_flaskFilledWithBlueDrops && _flaskFilledWithGreenDrops)
+            if (_flaskFilledWithBlueDrops && _flaskFilledWithGreenDrops && _flaskFilledWithYellowDrops)
                 WinGame();
         }
 
@@ -104,6 +109,9 @@ namespace WaterSort
                 int greenDropsInFlask = dropInFlask.Where(drop => drop.Drop.BackColor == Color.Green).Count();
                 if(greenDropsInFlask == 4)
                     _flaskFilledWithGreenDrops = true;
+                int yellowDropsInFlask = dropInFlask.Where(drop => drop.Drop.BackColor == Color.Yellow).Count();
+                if (yellowDropsInFlask == 4)
+                    _flaskFilledWithYellowDrops = true;
             }
         }
 
@@ -169,7 +177,8 @@ namespace WaterSort
             //label.DoDragDrop(sender, DragDropEffects.Move);
             GroupBox flask;
             if (label.Parent.Name == nameof(Flask1) || label.Parent.Name == nameof(Flask2) ||
-                label.Parent.Name == nameof(Flask3) || label.Parent.Name == nameof(Flask4))
+                label.Parent.Name == nameof(Flask3) || label.Parent.Name == nameof(Flask4) ||
+                label.Parent.Name == nameof(Flask5) || label.Parent.Name == nameof(Flask6))
             {
                 flask = (GroupBox)label.Parent;
 

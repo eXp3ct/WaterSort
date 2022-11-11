@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThirsLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThirsLevel.Designer.cs">
+      <DependentUpon>ThirsLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondLevel.Designer.cs">
+      <DependentUpon>SecondLevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -62,6 +74,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Water.cs" />
+    <EmbeddedResource Include="ThirsLevel.resx">
+      <DependentUpon>ThirsLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondLevel.resx">
+      <DependentUpon>SecondLevel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
