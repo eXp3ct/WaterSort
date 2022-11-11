@@ -48,7 +48,6 @@ namespace WaterSort
             this.Flask1.Size = new System.Drawing.Size(95, 273);
             this.Flask1.TabIndex = 0;
             this.Flask1.TabStop = false;
-            this.Flask1.Click += new System.EventHandler(this.FlaskCount);
             // 
             // Flask2
             // 
@@ -58,7 +57,6 @@ namespace WaterSort
             this.Flask2.Size = new System.Drawing.Size(95, 273);
             this.Flask2.TabIndex = 1;
             this.Flask2.TabStop = false;
-            this.Flask2.Click += new System.EventHandler(this.FlaskCount);
             // 
             // Flask3
             // 
@@ -68,7 +66,6 @@ namespace WaterSort
             this.Flask3.Size = new System.Drawing.Size(95, 273);
             this.Flask3.TabIndex = 1;
             this.Flask3.TabStop = false;
-            this.Flask3.Click += new System.EventHandler(this.FlaskCount);
             // 
             // Flask4
             // 
@@ -78,7 +75,6 @@ namespace WaterSort
             this.Flask4.Size = new System.Drawing.Size(95, 273);
             this.Flask4.TabIndex = 1;
             this.Flask4.TabStop = false;
-            this.Flask4.Click += new System.EventHandler(this.FlaskCount);
             // 
             // menuStrip1
             // 

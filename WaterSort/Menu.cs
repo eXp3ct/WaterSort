@@ -14,7 +14,7 @@ namespace WaterSort
         {
             FirstLevel firstLevel = new FirstLevel();
             firstLevel.Show(this);
-            this.Hide();
+            Hide();
         }
     }
 }
