@@ -41,6 +41,8 @@ namespace WaterSort
             this.Flask6 = new System.Windows.Forms.GroupBox();
             this.Flask7 = new System.Windows.Forms.GroupBox();
             this.Flask8 = new System.Windows.Forms.GroupBox();
+            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,9 @@ namespace WaterSort
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripMenu});
+            this.StripMenu,
+            this.restartToolStripMenuItem,
+            this.restartToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -142,6 +146,20 @@ namespace WaterSort
             this.Flask8.TabIndex = 1;
             this.Flask8.TabStop = false;
             // 
+            // restartToolStripMenuItem
+            // 
+            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.restartToolStripMenuItem.Text = "Restart";
+            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
+            // 
+            // restartToolStripMenuItem1
+            // 
+            this.restartToolStripMenuItem1.Name = "restartToolStripMenuItem1";
+            this.restartToolStripMenuItem1.Size = new System.Drawing.Size(50, 20);
+            this.restartToolStripMenuItem1.Text = "Menu";
+            this.restartToolStripMenuItem1.Click += new System.EventHandler(this.restartToolStripMenuItem1_Click);
+            // 
             // ThirdLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,12 +177,12 @@ namespace WaterSort
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ThirdLevel";
             this.Text = "ThirdLevel";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +206,7 @@ namespace WaterSort
         private GroupBox Flask6;
         private GroupBox Flask7;
         private GroupBox Flask8;
+        private ToolStripMenuItem restartToolStripMenuItem;
+        private ToolStripMenuItem restartToolStripMenuItem1;
     }
 }

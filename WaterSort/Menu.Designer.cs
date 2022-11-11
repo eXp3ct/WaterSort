@@ -34,6 +34,9 @@ namespace WaterSort
             this.SecondLevel = new System.Windows.Forms.Button();
             this.ThirsLevel = new System.Windows.Forms.Button();
             this.MenuText = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.обАвтореToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FristLevel
@@ -77,7 +80,6 @@ namespace WaterSort
             // 
             // MenuText
             // 
-            this.MenuText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MenuText.AutoSize = true;
             this.MenuText.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MenuText.Location = new System.Drawing.Point(218, 115);
@@ -86,6 +88,24 @@ namespace WaterSort
             this.MenuText.TabIndex = 0;
             this.MenuText.Text = "Water Sort";
             this.MenuText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.обАвтореToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // обАвтореToolStripMenuItem
+            // 
+            this.обАвтореToolStripMenuItem.Name = "обАвтореToolStripMenuItem";
+            this.обАвтореToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.обАвтореToolStripMenuItem.Text = "Об авторе";
+            this.обАвтореToolStripMenuItem.Click += new System.EventHandler(this.обАвтореToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -97,11 +117,15 @@ namespace WaterSort
             this.Controls.Add(this.SecondLevel);
             this.Controls.Add(this.FristLevel);
             this.Controls.Add(this.MenuText);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Menu";
-            this.Text = "Water Sort";
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Name = "Menu";
+            this.Text = "Water Sort";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +137,8 @@ namespace WaterSort
         private Button SecondLevel;
         private Button ThirsLevel;
         private Label MenuText;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem обАвтореToolStripMenuItem;
     }
 }
 

@@ -37,6 +37,8 @@ namespace WaterSort
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.StripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.перезапускToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +82,9 @@ namespace WaterSort
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripMenu});
+            this.StripMenu,
+            this.перезапускToolStripMenuItem,
+            this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -102,6 +106,20 @@ namespace WaterSort
             this.ExitButton.Text = "Exit";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // перезапускToolStripMenuItem
+            // 
+            this.перезапускToolStripMenuItem.Name = "перезапускToolStripMenuItem";
+            this.перезапускToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.перезапускToolStripMenuItem.Text = "Restart";
+            this.перезапускToolStripMenuItem.Click += new System.EventHandler(this.перезапускToolStripMenuItem_Click);
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
             // FirstLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,12 +133,12 @@ namespace WaterSort
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FirstLevel";
             this.Text = "FristLevel";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +158,7 @@ namespace WaterSort
         private ToolStripMenuItem StripMenu;
         private ToolStripMenuItem ExitButton;
         public MenuStrip menuStrip1;
+        private ToolStripMenuItem перезапускToolStripMenuItem;
+        private ToolStripMenuItem menuToolStripMenuItem;
     }
 }

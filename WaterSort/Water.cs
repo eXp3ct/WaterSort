@@ -9,7 +9,6 @@ namespace WaterSort
 
         private Color _color;
         
-
         public Water(Color color)
         { 
             _color= color;
@@ -24,16 +23,12 @@ namespace WaterSort
             {
                 Text = "",
                 BackColor = color,
-                Anchor= AnchorStyles.Bottom,
-                Size= new Size(50, 50),
-                Dock= DockStyle.Bottom
+                Anchor = AnchorStyles.Bottom,
+                Size = new Size(50, 50),
+                Dock = DockStyle.Bottom
             };
 
             return result;
-        }
-        private void Do()
-        {
-
         }
     }
 }

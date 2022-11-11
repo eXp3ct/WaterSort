@@ -10,7 +10,7 @@ namespace WaterSort
             InitializeComponent();
         }
 
-        private void FristLevel_Click(object sender, EventArgs e)
+        public void FristLevel_Click(object sender, EventArgs e)
         {
             FirstLevel firstLevel = new FirstLevel();
             firstLevel.Show(this);
@@ -29,6 +29,11 @@ namespace WaterSort
             ThirdLevel thirdLevel = new ThirdLevel();
             thirdLevel.Show(this);
             Hide();
+        }
+
+        private void обАвтореToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("сАФОНОВ мАКСИМ","Об авторе", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace WaterSort
 {
@@ -231,6 +229,19 @@ namespace WaterSort
                 label.DoDragDrop(label, DragDropEffects.Move);
             }
 
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThirdLevel thirdLevel = new ThirdLevel();
+            thirdLevel.Show(Owner);
+            Close();
+        }
+
+        private void restartToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            Close();
         }
     }
 }
