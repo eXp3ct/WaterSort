@@ -35,5 +35,10 @@ namespace WaterSort
         {
             MessageBox.Show("сАФОНОВ мАКСИМ","Об авторе", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-    }
+
+		private void Menu_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
